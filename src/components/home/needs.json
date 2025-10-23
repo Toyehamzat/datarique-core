@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_needs",
+  "info": {
+    "displayName": "needs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "btn_text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

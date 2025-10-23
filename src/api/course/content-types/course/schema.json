@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "course"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "certification": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "features": {
+      "type": "component",
+      "component": "course.features",
+      "repeatable": true
+    },
+    "highlight": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPro": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "string"
+    },
+    "analyticDescription": {
+      "type": "text"
+    },
+    "enroll": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::enroll.enroll",
+      "mappedBy": "course"
+    }
+  }
+}

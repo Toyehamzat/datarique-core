@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_home_services",
+  "info": {
+    "displayName": "services"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "btn_text": {
+      "type": "string"
+    },
+    "analytics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::analytic.analytic"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course"
+    },
+    "consultations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::consultation.consultation"
+    }
+  },
+  "config": {}
+}

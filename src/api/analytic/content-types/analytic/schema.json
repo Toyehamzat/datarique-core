@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "analytics",
+  "info": {
+    "singularName": "analytic",
+    "pluralName": "analytics",
+    "displayName": "analytic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "certification": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "features": {
+      "type": "component",
+      "component": "analytic.features",
+      "repeatable": true
+    },
+    "highlight": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPro": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "btn_text": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "string"
+    },
+    "analyticDescription": {
+      "type": "text"
+    },
+    "enroll": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::enroll.enroll",
+      "mappedBy": "analytic"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrolls",
+  "info": {
+    "singularName": "enroll",
+    "pluralName": "enrolls",
+    "displayName": "enroll"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course",
+      "inversedBy": "enroll"
+    },
+    "analytic": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::analytic.analytic",
+      "inversedBy": "enroll"
+    }
+  }
+}
