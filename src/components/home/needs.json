@@ -13,6 +13,9 @@
     },
     "btn_text": {
       "type": "string"
+    },
+    "icon": {
+      "type": "string"
     }
   },
   "config": {}

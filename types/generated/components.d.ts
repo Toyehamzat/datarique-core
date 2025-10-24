@@ -16,7 +16,9 @@ export interface AnalyticFeatures extends Struct.ComponentSchema {
   info: {
     displayName: 'features';
   };
-  attributes: {};
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
 }
 
 export interface CourseFeatures extends Struct.ComponentSchema {
@@ -35,6 +37,7 @@ export interface HomeNeeds extends Struct.ComponentSchema {
   attributes: {
     btn_text: Schema.Attribute.String;
     description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -66,6 +69,7 @@ export interface HomeServices extends Struct.ComponentSchema {
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     description: Schema.Attribute.Text;
     header: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }

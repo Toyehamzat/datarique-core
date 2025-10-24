@@ -4,6 +4,10 @@
     "displayName": "features"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  },
   "config": {}
 }
