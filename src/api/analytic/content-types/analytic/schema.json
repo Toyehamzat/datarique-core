@@ -14,13 +14,7 @@
     "title": {
       "type": "string"
     },
-    "duration": {
-      "type": "string"
-    },
-    "certification": {
-      "type": "string"
-    },
-    "description": {
+    "analyticDescription": {
       "type": "text"
     },
     "price": {
@@ -35,19 +29,8 @@
       "type": "boolean",
       "default": false
     },
-    "isPro": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
     "btn_text": {
       "type": "string"
-    },
-    "plan": {
-      "type": "string"
-    },
-    "analyticDescription": {
-      "type": "text"
     },
     "enroll": {
       "type": "relation",

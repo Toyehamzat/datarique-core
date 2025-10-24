@@ -46,9 +46,6 @@
     "plan": {
       "type": "string"
     },
-    "analyticDescription": {
-      "type": "text"
-    },
     "enroll": {
       "type": "relation",
       "relation": "oneToOne",

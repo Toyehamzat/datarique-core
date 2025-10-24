@@ -26,7 +26,9 @@ export interface CourseFeatures extends Struct.ComponentSchema {
   info: {
     displayName: 'features';
   };
-  attributes: {};
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
 }
 
 export interface HomeNeeds extends Struct.ComponentSchema {

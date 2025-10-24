@@ -514,25 +514,18 @@ export interface ApiAnalyticAnalytic extends Struct.CollectionTypeSchema {
   attributes: {
     analyticDescription: Schema.Attribute.Text;
     btn_text: Schema.Attribute.String;
-    certification: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    duration: Schema.Attribute.String;
     enroll: Schema.Attribute.Relation<'oneToOne', 'api::enroll.enroll'>;
     features: Schema.Attribute.Component<'analytic.features', true>;
     highlight: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    isPro: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::analytic.analytic'
     > &
       Schema.Attribute.Private;
-    plan: Schema.Attribute.String;
     price: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
@@ -619,7 +612,6 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    analyticDescription: Schema.Attribute.Text;
     buttonText: Schema.Attribute.String;
     certification: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
