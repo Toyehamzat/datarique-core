@@ -71,6 +71,7 @@ export interface HomeServices extends Struct.ComponentSchema {
     courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     description: Schema.Attribute.Text;
     header: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };

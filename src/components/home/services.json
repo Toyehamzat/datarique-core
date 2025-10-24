@@ -27,6 +27,9 @@
         "audios"
       ]
     },
+    "icon": {
+      "type": "string"
+    },
     "analytics": {
       "type": "relation",
       "relation": "oneToMany",
