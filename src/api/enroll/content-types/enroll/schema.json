@@ -24,13 +24,15 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::course.course",
-      "inversedBy": "enroll"
+      "inversedBy": "enroll",
+      "required": false
     },
     "analytic": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::analytic.analytic",
-      "inversedBy": "enroll"
+      "inversedBy": "enroll",
+      "required": false
     }
   }
 }

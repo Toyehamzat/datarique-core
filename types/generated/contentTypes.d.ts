@@ -476,11 +476,11 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero_description: Schema.Attribute.Text;
     hero_title: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -494,8 +494,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     purpose: Schema.Attribute.Text;
     story: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     values: Schema.Attribute.Component<'about.values', true>;
     vision: Schema.Attribute.Text;
   };
@@ -510,13 +509,13 @@ export interface ApiAnalyticAnalytic extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     analyticDescription: Schema.Attribute.Text;
     btn_text: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     enroll: Schema.Attribute.Relation<'oneToOne', 'api::enroll.enroll'>;
     features: Schema.Attribute.Component<'analytic.features', true>;
     highlight: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -530,8 +529,7 @@ export interface ApiAnalyticAnalytic extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -580,12 +578,12 @@ export interface ApiConsultationConsultation
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     booking: Schema.Attribute.Relation<'oneToOne', 'api::booking.booking'>;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -596,8 +594,7 @@ export interface ApiConsultationConsultation
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -610,13 +607,13 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     buttonText: Schema.Attribute.String;
     certification: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     description: Schema.Attribute.Text;
     duration: Schema.Attribute.String;
     enroll: Schema.Attribute.Relation<'oneToOne', 'api::enroll.enroll'>;
@@ -634,8 +631,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -712,11 +708,11 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     hero_description: Schema.Attribute.Text;
     hero_title: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -731,8 +727,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     services: Schema.Attribute.Component<'home.services', true>;
     testimonials: Schema.Attribute.Component<'home.testimonials', true>;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
