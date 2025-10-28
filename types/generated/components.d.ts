@@ -62,7 +62,7 @@ export interface HomeServices extends Struct.ComponentSchema {
     displayName: 'services';
   };
   attributes: {
-    analytics: Schema.Attribute.Relation<'oneToMany', 'api::analytic.analytic'>;
+    aaas: Schema.Attribute.Relation<'oneToMany', 'api::aaass.aaass'>;
     btn_text: Schema.Attribute.String;
     consultations: Schema.Attribute.Relation<
       'oneToMany',
