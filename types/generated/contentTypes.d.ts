@@ -467,6 +467,32 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAaassAaass extends Struct.CollectionTypeSchema {
+  collectionName: 'aaas';
+  info: {
+    displayName: 'AAAS';
+    pluralName: 'aaas';
+    singularName: 'aaass';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::aaass.aaass'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   collectionName: 'about_pages';
   info: {
@@ -607,16 +633,19 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     buttonText: Schema.Attribute.String;
     certification: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     duration: Schema.Attribute.String;
-    enroll: Schema.Attribute.Relation<'oneToOne', 'api::enroll.enroll'>;
+    enroll_course: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::enroll-course.enroll-course'
+    >;
     features: Schema.Attribute.Component<'course.features', true>;
     highlight: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isPro: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -631,14 +660,47 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEnrollCourseEnrollCourse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'enroll_courses';
+  info: {
+    displayName: 'enroll course';
+    pluralName: 'enroll-courses';
+    singularName: 'enroll-course';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    course: Schema.Attribute.Relation<'oneToOne', 'api::course.course'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    full_name: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::enroll-course.enroll-course'
+    > &
+      Schema.Attribute.Private;
+    phone_number: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
 export interface ApiEnrollEnroll extends Struct.CollectionTypeSchema {
   collectionName: 'enrolls';
   info: {
-    displayName: 'enroll';
+    displayName: 'enroll analytic';
     pluralName: 'enrolls';
     singularName: 'enroll';
   };
@@ -647,7 +709,6 @@ export interface ApiEnrollEnroll extends Struct.CollectionTypeSchema {
   };
   attributes: {
     analytic: Schema.Attribute.Relation<'oneToOne', 'api::analytic.analytic'>;
-    course: Schema.Attribute.Relation<'oneToOne', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1242,11 +1303,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::aaass.aaass': ApiAaassAaass;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::analytic.analytic': ApiAnalyticAnalytic;
       'api::booking.booking': ApiBookingBooking;
       'api::consultation.consultation': ApiConsultationConsultation;
       'api::course.course': ApiCourseCourse;
+      'api::enroll-course.enroll-course': ApiEnrollCourseEnrollCourse;
       'api::enroll.enroll': ApiEnrollEnroll;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "enrolls",
+  "collectionName": "enroll_courses",
   "info": {
-    "singularName": "enroll",
-    "pluralName": "enrolls",
-    "displayName": "enroll analytic"
+    "singularName": "enroll-course",
+    "pluralName": "enroll-courses",
+    "displayName": "enroll course"
   },
   "options": {
     "draftAndPublish": true
@@ -20,11 +20,11 @@
     "full_name": {
       "type": "string"
     },
-    "analytic": {
+    "course": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::analytic.analytic",
-      "inversedBy": "enroll"
+      "target": "api::course.course",
+      "inversedBy": "enroll_course"
     }
   }
 }

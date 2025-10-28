@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aaas",
+  "info": {
+    "singularName": "aaass",
+    "pluralName": "aaas",
+    "displayName": "AAAS"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

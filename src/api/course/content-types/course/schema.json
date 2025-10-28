@@ -7,8 +7,7 @@
     "displayName": "course"
   },
   "options": {
-    "draftAndPublish": true,
-     "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -47,10 +46,10 @@
     "plan": {
       "type": "string"
     },
-    "enroll": {
+    "enroll_course": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::enroll.enroll",
+      "target": "api::enroll-course.enroll-course",
       "mappedBy": "course"
     }
   }

@@ -8,7 +8,7 @@
   },
   "options": {
     "draftAndPublish": true,
-     "populateCreatorFields": true
+    "populateCreatorFields": true
   },
   "pluginOptions": {},
   "attributes": {
