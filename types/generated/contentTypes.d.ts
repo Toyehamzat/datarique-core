@@ -535,13 +535,13 @@ export interface ApiAnalyticAnalytic extends Struct.CollectionTypeSchema {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     analyticDescription: Schema.Attribute.Text;
     btn_text: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     enroll: Schema.Attribute.Relation<'oneToOne', 'api::enroll.enroll'>;
     features: Schema.Attribute.Component<'analytic.features', true>;
     highlight: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -551,43 +551,9 @@ export interface ApiAnalyticAnalytic extends Struct.CollectionTypeSchema {
       'api::analytic.analytic'
     > &
       Schema.Attribute.Private;
-    price: Schema.Attribute.BigInteger;
+    price: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
-  };
-}
-
-export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
-  collectionName: 'bookings';
-  info: {
-    displayName: 'booking';
-    pluralName: 'bookings';
-    singularName: 'booking';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    consultation: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::consultation.consultation'
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
-    full_name: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::booking.booking'
-    > &
-      Schema.Attribute.Private;
-    message: Schema.Attribute.Text;
-    phone_number: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -604,12 +570,11 @@ export interface ApiConsultationConsultation
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
-    booking: Schema.Attribute.Relation<'oneToOne', 'api::booking.booking'>;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -620,7 +585,8 @@ export interface ApiConsultationConsultation
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -656,7 +622,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     plan: Schema.Attribute.String;
-    price: Schema.Attribute.BigInteger;
+    price: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1306,7 +1272,6 @@ declare module '@strapi/strapi' {
       'api::aaass.aaass': ApiAaassAaass;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::analytic.analytic': ApiAnalyticAnalytic;
-      'api::booking.booking': ApiBookingBooking;
       'api::consultation.consultation': ApiConsultationConsultation;
       'api::course.course': ApiCourseCourse;
       'api::enroll-course.enroll-course': ApiEnrollCourseEnrollCourse;

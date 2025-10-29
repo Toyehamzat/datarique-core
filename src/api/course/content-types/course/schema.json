@@ -23,9 +23,6 @@
     "description": {
       "type": "text"
     },
-    "price": {
-      "type": "biginteger"
-    },
     "features": {
       "type": "component",
       "component": "course.features",
@@ -51,6 +48,9 @@
       "relation": "oneToOne",
       "target": "api::enroll-course.enroll-course",
       "mappedBy": "course"
+    },
+    "price": {
+      "type": "string"
     }
   }
 }

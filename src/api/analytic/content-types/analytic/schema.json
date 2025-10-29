@@ -7,8 +7,7 @@
     "displayName": "analytic"
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -19,7 +18,7 @@
       "type": "text"
     },
     "price": {
-      "type": "biginteger"
+      "type": "string"
     },
     "features": {
       "type": "component",

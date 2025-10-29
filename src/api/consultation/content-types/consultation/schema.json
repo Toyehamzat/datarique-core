@@ -7,8 +7,7 @@
     "displayName": "consultation"
   },
   "options": {
-    "draftAndPublish": true,
-     "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,12 +16,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "booking": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::booking.booking",
-      "mappedBy": "consultation"
     }
   }
 }
